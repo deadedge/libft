@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jp <jp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/09/10 11:42:45 by jp               ###   ########.fr       */
+/*   Updated: 2025/09/15 15:11:13 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void				ft_bzero(void *s, unsigned int n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_isdigit_complex(char *str);
 void				free_bi_array(char **arr);
-
+void				print_bi_array(char **arr);
 // STRUCTS
 
 typedef struct s_list
