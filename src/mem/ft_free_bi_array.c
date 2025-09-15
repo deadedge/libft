@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_bi_array.c                                 :+:      :+:    :+:   */
+/*   ft_ft_bi_array_free.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	free_bi_array(char **arr)
+void	ft_bi_array_free(char **arr)
 {
 	int	i;
 

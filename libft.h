@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/09/15 15:44:21 by jocas            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:45:49 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int					ft_atoi(const char *nptr);
 void				ft_bzero(void *s, unsigned int n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_isdigit_complex(char *str);
-void				free_bi_array(char **arr);
+void				ft_bi_array_free(char **arr);
 void				ft_by_array_print(char **arr);
 int					ft_by_array_len(char **arr);
 // STRUCTS
