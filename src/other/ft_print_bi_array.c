@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_bi_array.c                                :+:      :+:    :+:   */
+/*   ft_ft_by_array_print.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-void	print_bi_array(char **arr)
+void	ft_by_array_print(char **arr)
 {
 	int	i;
 
