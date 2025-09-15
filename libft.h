@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/09/15 15:37:33 by jocas            ###   ########.fr       */
+/*   Updated: 2025/09/15 15:38:42 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_isdigit_complex(char *str);
 void				free_bi_array(char **arr);
 void				print_bi_array(char **arr);
-void				teste_mem(void);
 // STRUCTS
 
 typedef struct s_list
