@@ -68,7 +68,7 @@ void				ft_bi_array_free(char **arr);
 void				ft_by_array_print(char **arr);
 int					ft_by_array_len(char **arr);
 long				ft_atol(const char *nptr);
-int					is_space(const char s);
+int					ft_is_space(const char s);
 
 // STRUCTS
 
