@@ -6,7 +6,7 @@
 /*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/10/17 13:57:37 by joao-cor         ###   ########.fr       */
+/*   Updated: 2025/10/17 14:48:59 by joao-cor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void				ft_by_array_print(char **arr);
 int					ft_by_array_len(char **arr);
 long				ft_atol(const char *nptr);
 int					ft_is_space(const char s);
+void				*ft_realloc(void *ptr, size_t ptr_size, size_t size);
 
 // STRUCTS
 
