@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 14:30:16 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/11/05 12:18:45 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/02 11:37:44 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 	unsigned char	*old_bytes;
 	size_t			i;
 
+	if (!ptr)
+		return (NULL);
 	if (new_size == 0)
 	{
 		free(ptr);
