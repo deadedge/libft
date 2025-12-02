@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:45:29 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/09/15 15:01:27 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/02 12:13:41 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	find_next_quote(char const *str, int start, int str_len,
 		return (1);
 	while (str[start + i] && start + i < str_len)
 	{
-		if (str[start + i] == '\'')
+		if (str[start + i] == '\'' || str[start + i] == '"')
 			return (1);
 		i++;
 	}
@@ -58,8 +58,8 @@ static int	count_words(char const *str, char c)
 		i++;
 	while (i < str_len)
 	{
-		if (str[i] == '\'' && find_next_quote(str, (i + 1), str_len,
-				inside_str))
+		if ((str[i] == '\'' || str[i] == '"') && find_next_quote(str, (i + 1),
+				str_len, inside_str))
 			inside_str = !inside_str;
 		if ((str[i] == c && (i + 1 != str_len)) && !inside_str)
 			count++;
@@ -82,8 +82,9 @@ static int	fill_line(char const *str, char **line_to_fill, int *last_index,
 		start++;
 	while (str[start + len])
 	{
-		if (str[start + len] == '\'' && find_next_quote(str, start + len + 1,
-				ft_strlen(str), inside_str))
+		if ((str[start + len] == '\'' || str[start + len] == '"')
+				&& find_next_quote(str, start + len + 1, ft_strlen(str),
+				inside_str))
 			inside_str = !inside_str;
 		if (str[start + len] == delimiter && !inside_str)
 			break ;
