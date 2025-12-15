@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:46:02 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 15:55:00 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:05:34 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static int	write_custom(char format, va_list *args, char **str_ptr)
 {
 	if (format == CHAR)
-		return (write_char(va_arg(*args, int), str_ptr));
+		return (format_char(va_arg(*args, int), str_ptr));
 	else if (format == STRING)
-		return (write_string(va_arg(*args, char *), str_ptr));
+		return (format_string(va_arg(*args, char *), str_ptr));
 	else if (format == INTEGER || format == DECIMAL)
-		return (write_number(va_arg(*args, int), str_ptr));
+		return (format_number(va_arg(*args, int), str_ptr));
 	else if (format == POINTER)
-		return (write_hex(va_arg(*args, unsigned long long), str_ptr));
+		return (format_hex(va_arg(*args, unsigned long long), str_ptr));
 	else if (format == UNSDECIMAL)
-		return (write_unsinged_int(va_arg(*args, unsigned int), str_ptr));
+		return (format_unsinged_int(va_arg(*args, unsigned int), str_ptr));
 	else if (format == NUMBERHEXLOWER)
-		return (write_number_to_hex(va_arg(*args, unsigned int), 0, str_ptr));
+		return (format_number_to_hex(va_arg(*args, unsigned int), 0, str_ptr));
 	else if (format == NUMBERHEXUPPER)
-		return (write_number_to_hex(va_arg(*args, unsigned int), 1, str_ptr));
+		return (format_number_to_hex(va_arg(*args, unsigned int), 1, str_ptr));
 	else if (format == PERCENT)
-		return (write_char('%', str_ptr));
+		return (format_char('%', str_ptr));
 	return (-1);
 }
 
@@ -45,7 +45,7 @@ static int	process_format(const char *format, va_list *args, char **str_ptr)
 		if (format[i] == '%')
 			len += write_custom(format[++i], args, str_ptr);
 		else
-			len += write_char(format[i], str_ptr);
+			len += format_char(format[i], str_ptr);
 		i++;
 	}
 	return (len);

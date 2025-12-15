@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:53:22 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 15:55:00 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:05:49 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "./ft_string_format.h"
 #include "libft.h"
 
-int	write_char(char c, char **str_ptr)
+int	format_char(char c, char **str_ptr)
 {
 	if (str_ptr && *str_ptr)
 	{
@@ -44,7 +44,7 @@ void	inverte_string(char *str)
 	}
 }
 
-char	*convert_to_hex(unsigned long long num)
+char	*format_convert_to_hex(unsigned long long num)
 {
 	unsigned int	i;
 	char			*result;
