@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:46:02 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 16:05:34 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:08:25 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 static int	write_custom(char format, va_list *args, char **str_ptr)
 {
-	if (format == CHAR)
+	if (format == F_CHAR)
 		return (format_char(va_arg(*args, int), str_ptr));
-	else if (format == STRING)
+	else if (format == F_STRING)
 		return (format_string(va_arg(*args, char *), str_ptr));
-	else if (format == INTEGER || format == DECIMAL)
+	else if (format == F_INTEGER || format == F_DECIMAL)
 		return (format_number(va_arg(*args, int), str_ptr));
-	else if (format == POINTER)
+	else if (format == F_POINTER)
 		return (format_hex(va_arg(*args, unsigned long long), str_ptr));
-	else if (format == UNSDECIMAL)
+	else if (format == F_UNSDECIMAL)
 		return (format_unsinged_int(va_arg(*args, unsigned int), str_ptr));
-	else if (format == NUMBERHEXLOWER)
+	else if (format == F_NUMBERHEXLOWER)
 		return (format_number_to_hex(va_arg(*args, unsigned int), 0, str_ptr));
-	else if (format == NUMBERHEXUPPER)
+	else if (format == F_NUMBERHEXUPPER)
 		return (format_number_to_hex(va_arg(*args, unsigned int), 1, str_ptr));
-	else if (format == PERCENT)
+	else if (format == F_PERCENT)
 		return (format_char('%', str_ptr));
 	return (-1);
 }

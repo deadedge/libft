@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:55:20 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 16:06:55 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:08:25 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ char	*format_convert_to_hex(unsigned long long num);
 // enums
 typedef enum f_formats
 {
-	CHAR = 'c',
-	STRING = 's',
-	DECIMAL = 'd',
-	INTEGER = 'i',
-	POINTER = 'p',
-	UNSDECIMAL = 'u',
-	NUMBERHEXLOWER = 'x',
-	NUMBERHEXUPPER = 'X',
-	PERCENT = '%',
+	F_CHAR = 'c',
+	F_STRING = 's',
+	F_DECIMAL = 'd',
+	F_INTEGER = 'i',
+	F_POINTER = 'p',
+	F_UNSDECIMAL = 'u',
+	F_NUMBERHEXLOWER = 'x',
+	F_NUMBERHEXUPPER = 'X',
+	F_PERCENT = '%',
 }		t_t_formats;
 
 #endif
