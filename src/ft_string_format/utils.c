@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:53:22 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 16:05:49 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/15 16:10:05 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	format_char(char c, char **str_ptr)
 	return (1);
 }
 
-void	inverte_string(char *str)
+static void	inverte_string(char *str)
 {
 	unsigned int	i;
 	unsigned int	j;
