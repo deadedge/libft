@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split_advanced.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:45:29 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/04 15:24:53 by joao-cor         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:11:35 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	count_words(char const *str, char c)
 	quote = 0;
 	while (str[i] == c)
 		i++;
+	if (i == str_len)
+		return (0);
 	while (i < str_len)
 	{
 		if (str[i] == '\'' || str[i] == '"')
