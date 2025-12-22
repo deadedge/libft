@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/11/14 14:35:47 by joao-cor         ###   ########.fr       */
+/*   Updated: 2025/12/22 11:35:25 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include "../libft/src/ft_printf/ft_printf.h"
+# include "../libft/src/ft_string_format/ft_string_format.h"
 # include "../libft/src/get_next_line/get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>
