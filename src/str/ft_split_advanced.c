@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:45:29 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 17:11:35 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/28 17:27:10 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,28 @@ static int	count_words(char const *str, char c)
 	count = 0;
 	str_len = ft_strlen(str);
 	quote = 0;
-	while (str[i] == c)
+	while (i < str_len && str[i] == c)
 		i++;
-	if (i == str_len)
-		return (0);
 	while (i < str_len)
 	{
-		if (str[i] == '\'' || str[i] == '"')
+		count++;
+		while (i < str_len)
 		{
-			if (quote == 0)
-				quote = str[i];
-			else if (quote == str[i])
-				quote = 0;
+			if (str[i] == '\'' || str[i] == '"')
+			{
+				if (quote == 0)
+					quote = str[i];
+				else if (quote == str[i])
+					quote = 0;
+			}
+			if (str[i] == c && quote == 0)
+				break ;
+			i++;
 		}
-		if (str[i] == c && quote == 0 && i + 1 < str_len)
-			count++;
-		i++;
+		while (i < str_len && str[i] == c)
+			i++;
 	}
-	return (count + 1);
+	return (count);
 }
 
 static int	fill_line(char const *str, char **line_to_fill, int *last_index,
@@ -72,7 +76,11 @@ static int	fill_line(char const *str, char **line_to_fill, int *last_index,
 	if (!*line_to_fill)
 		return (0);
 	ft_strlcpy(*line_to_fill, str + start, len + 1);
-	return ((*last_index = start + len + 1), 1);
+	if (str[start + len] == '\0')
+		*last_index = start + len;
+	else
+		*last_index = start + len + 1;
+	return (1);
 }
 
 char	**ft_split_advanced(char const *s, char c)
