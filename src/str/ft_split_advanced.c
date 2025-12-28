@@ -6,59 +6,57 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:45:29 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/28 17:27:10 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/28 23:49:09 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static void	handle_quote(char c, char *quote)
+{
+	if (c == '\'' || c == '"')
+	{
+		if (*quote == 0)
+			*quote = c;
+		else if (*quote == c)
+			*quote = 0;
+	}
+}
+
 static int	count_words(char const *str, char c)
 {
 	int		i;
-	int		str_len;
 	int		count;
 	char	quote;
 
 	i = 0;
 	count = 0;
-	str_len = ft_strlen(str);
 	quote = 0;
-	while (i < str_len && str[i] == c)
+	while (str[i] && str[i] == c)
 		i++;
-	while (i < str_len)
+	while (str[i])
 	{
 		count++;
-		while (i < str_len)
+		while (str[i])
 		{
-			if (str[i] == '\'' || str[i] == '"')
-			{
-				if (quote == 0)
-					quote = str[i];
-				else if (quote == str[i])
-					quote = 0;
-			}
+			handle_quote(str[i], &quote);
 			if (str[i] == c && quote == 0)
 				break ;
 			i++;
 		}
-		while (i < str_len && str[i] == c)
+		while (str[i] && str[i] == c)
 			i++;
 	}
 	return (count);
 }
 
-static int	fill_line(char const *str, char **line_to_fill, int *last_index,
-		char delimiter)
+static int	calculate_word_len(char const *str, int start, char delimiter)
 {
-	int		start;
 	int		len;
 	char	quote;
 
-	start = *last_index;
 	len = 0;
 	quote = 0;
-	while (str[start] == delimiter)
-		start++;
 	while (str[start + len])
 	{
 		if (str[start + len] == '\'' || str[start + len] == '"')
@@ -72,14 +70,24 @@ static int	fill_line(char const *str, char **line_to_fill, int *last_index,
 			break ;
 		len++;
 	}
+	return (len);
+}
+
+static int	fill_line(char const *str, char **line_to_fill, int *last_index,
+		char delimiter)
+{
+	int	start;
+	int	len;
+
+	start = *last_index;
+	while (str[start] == delimiter)
+		start++;
+	len = calculate_word_len(str, start, delimiter);
 	*line_to_fill = malloc(sizeof(char) * (len + 1));
 	if (!*line_to_fill)
 		return (0);
 	ft_strlcpy(*line_to_fill, str + start, len + 1);
-	if (str[start + len] == '\0')
-		*last_index = start + len;
-	else
-		*last_index = start + len + 1;
+	*last_index = start + len + (str[start + len] != '\0');
 	return (1);
 }
 

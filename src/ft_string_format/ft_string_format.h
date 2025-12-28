@@ -6,12 +6,12 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 11:55:20 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/15 16:08:25 by jocas            ###   ########.fr       */
+/*   Updated: 2025/12/28 23:50:08 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STR_FORMAT
-# define FT_STR_FORMAT
+#ifndef FT_STRING_FORMAT_H
+# define FT_STRING_FORMAT_H
 
 // include external libs
 # include <stdarg.h>
