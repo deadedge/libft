@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 14:19:26 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/10/29 14:19:35 by joao-cor         ###   ########.fr       */
+/*   Updated: 2025/12/28 16:49:30 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@ int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
+	if (!s1 || !s2)
+	{
+		if (!s1 && !s2)
+			return (0);
+		if (!s1)
+			return (-1);
+		return (1);
+	}
 	i = 0;
 	while ((s1[i] || s2[i]) && s1[i] == s2[i])
 		i++;
