@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2025/12/22 11:35:25 by jocas            ###   ########.fr       */
+/*   Updated: 2026/03/03 15:45:06 by joao-cor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ t_list				*ft_lstlast(t_list *lst);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_lstadd_back(t_list **lst, t_list *new);
-
+void				ft_array_callback(char **arr, void (*f)(char *));
 #endif
