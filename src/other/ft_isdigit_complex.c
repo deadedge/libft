@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit_complex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 14:42:54 by jp                #+#    #+#             */
-/*   Updated: 2025/09/15 15:01:27 by jocas            ###   ########.fr       */
+/*   Updated: 2026/03/04 12:34:29 by joao-cor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	ft_isdigit_complex(char *str)
 	if (!str)
 		return (0);
 	i = 0;
-	if (str[0] == '-' || str[0] == '+')
+	while (str[i] && ft_is_space(str[i]))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (!str[i])
 		return (0);
