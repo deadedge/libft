@@ -6,7 +6,7 @@
 /*   By: joao-cor <joao-cor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2026/03/03 15:45:06 by joao-cor         ###   ########.fr       */
+/*   Updated: 2026/03/05 15:00:00 by joao-cor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int					ft_is_space(const char s);
 void				*ft_realloc(void *ptr, size_t ptr_size, size_t size);
 int					ft_strcmp(char *s1, char *s2);
 char				**ft_array_dup(char **arr);
-
+char				*ft_strndup(const char *s, int len, char insert_char);
 // STRUCTS
 
 typedef struct s_list
