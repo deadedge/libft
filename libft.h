@@ -6,7 +6,7 @@
 /*   By: jocas <jocas@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:32:08 by joao-cor          #+#    #+#             */
-/*   Updated: 2026/03/09 11:25:53 by jocas            ###   ########.fr       */
+/*   Updated: 2026/03/09 15:14:31 by jocas            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int					ft_strcmp(char *s1, char *s2);
 char				**ft_array_dup(char **arr);
 char				*ft_strndup(const char *s, int len, char insert_char);
 void				ft_array_callback_i(char **arr, void (*f)(int, char *));
-
+char				**ft_dup_array(char **arr);
 // STRUCTS
 typedef struct s_list
 {
